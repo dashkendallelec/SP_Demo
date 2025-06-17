@@ -1,0 +1,6 @@
+Name: Model
+Type: ModelCategoryFolder
+Children:
+- File: Types/Types.yaml
+- File: DB_Configs/DB_Configs.yaml
+- File: SP_Configs/SP_Configs.yaml

@@ -1,0 +1,85 @@
+Name: DataTypes
+Type: FolderType
+Children:
+- Class: DataType
+  Name: udt_ProdData
+  Id: g=b3f9a11ea0091d3cc6cf454835094d0e
+  Supertype: Structure
+  StructDefinition: 
+   {
+    "Name": "udt_ProdData",
+    "DataType": {
+     "IdType": 2,
+     "Id": "b3f9a11ea0091d3cc6cf454835094d0e",
+     "Namespace": 7
+    },
+    "Fields": [{
+      "Name": "PLC_TS",
+      "DataType": {
+       "Id": 12
+      }
+     },{
+      "Name": "ProdLine",
+      "DataType": {
+       "Id": 12
+      }
+     },{
+      "Name": "EquipID",
+      "DataType": {
+       "Id": 12
+      }
+     },{
+      "Name": "ProdCount",
+      "DataType": {
+       "Id": 6
+      }
+     },{
+      "Name": "CycleAvg",
+      "DataType": {
+       "Id": 10
+      }
+     }]
+   }
+  DisplayName: {"LocaleId":"","Text":"udt_ProdData"}
+  Children:
+  - Name: ns=0;Default Binary
+    Type: DataTypeEncodingType
+    ModellingRule: None
+    DisplayName: {"LocaleId":"","Text":"Default Binary"}
+    ReferenceType: HasEncoding
+- Class: DataType
+  Name: udt_SPInterface
+  Id: g=70639e383bffca37eaae67aa6560d1a3
+  Supertype: Structure
+  StructDefinition: 
+   {
+    "Name": "udt_SPInterface",
+    "DataType": {
+     "IdType": 2,
+     "Id": "70639e383bffca37eaae67aa6560d1a3",
+     "Namespace": 7
+    },
+    "Fields": [{
+      "Name": "Trans_DN",
+      "DataType": {
+       "Id": 1
+      }
+     },{
+      "Name": "SQLErrorNum",
+      "DataType": {
+       "Id": 6
+      }
+     },{
+      "Name": "Trigger",
+      "DataType": {
+       "Id": 6
+      }
+     }]
+   }
+  DisplayName: {"LocaleId":"","Text":"udt_SPInterface"}
+  Children:
+  - Name: ns=0;Default Binary
+    Type: DataTypeEncodingType
+    ModellingRule: None
+    DisplayName: {"LocaleId":"","Text":"Default Binary"}
+    ReferenceType: HasEncoding

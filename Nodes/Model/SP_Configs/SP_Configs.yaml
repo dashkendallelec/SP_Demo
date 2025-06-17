@@ -1,0 +1,203 @@
+Name: SP_Configs
+Type: FolderType
+Children:
+- Name: ProdData_Line1
+  Type: InsertProdData_Config
+  Children:
+  - Name: SP
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "usp_ProdData"
+  - Name: Call_ProdDataSP
+    Type: NetLogic
+    Children:
+    - Class: Reference
+      Target: g=c371bfb7dd85dd42cc33437e36a7262a
+      Direction: Forward
+  - Name: PLC_TS
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "Jan 1, 1601, 12:00:00 AM"
+    Children:
+    - Name: DynamicLink
+      Type: DynamicLink
+      DataType: NodePath
+      Value: "../../../../CommDrivers/RAEtherNet_IPDriver1/EchoDemoStation/Tags/Controller Tags/Line1SummaryDB_LD/PLC_TS"
+      Children:
+      - Name: Mode
+        Type: BaseVariableType
+        DataType: DynamicLinkMode
+        Value: 2
+  - Name: ProdLine
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "Line-x"
+    Children:
+    - Name: DynamicLink
+      Type: DynamicLink
+      DataType: NodePath
+      Value: "../../../../CommDrivers/RAEtherNet_IPDriver1/EchoDemoStation/Tags/Controller Tags/Line1SummaryDB_LD/ProdLine"
+      Children:
+      - Name: Mode
+        Type: BaseVariableType
+        DataType: DynamicLinkMode
+        Value: 2
+  - Name: EquipID
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "Equip Name"
+    Children:
+    - Name: DynamicLink
+      Type: DynamicLink
+      DataType: NodePath
+      Value: "../../../../CommDrivers/RAEtherNet_IPDriver1/EchoDemoStation/Tags/Controller Tags/Line1SummaryDB_LD/EquipID"
+      Children:
+      - Name: Mode
+        Type: BaseVariableType
+        DataType: DynamicLinkMode
+        Value: 2
+  - Name: ProdCount
+    Type: BaseDataVariableType
+    DataType: Int32
+    Children:
+    - Name: DynamicLink
+      Type: DynamicLink
+      DataType: NodePath
+      Value: "../../../../CommDrivers/RAEtherNet_IPDriver1/EchoDemoStation/Tags/Controller Tags/Line1SummaryDB_LD/ProdCount"
+      Children:
+      - Name: Mode
+        Type: BaseVariableType
+        DataType: DynamicLinkMode
+        Value: 2
+  - Name: CycleAvg
+    Type: BaseDataVariableType
+    DataType: Float
+    Value: 1.25
+    Children:
+    - Name: DynamicLink
+      Type: DynamicLink
+      DataType: NodePath
+      Value: "../../../../CommDrivers/RAEtherNet_IPDriver1/EchoDemoStation/Tags/Controller Tags/Line1SummaryDB_LD/CycleAvg"
+      Children:
+      - Name: Mode
+        Type: BaseVariableType
+        DataType: DynamicLinkMode
+        Value: 2
+  - Name: Trigger
+    Type: BaseDataVariableType
+    DataType: Int32
+    Children:
+    - Name: DynamicLink
+      Type: DynamicLink
+      DataType: NodePath
+      Value: "../../../../CommDrivers/RAEtherNet_IPDriver1/EchoDemoStation/Tags/Controller Tags/SPLine1Summary/Trigger"
+      Children:
+      - Name: Mode
+        Type: BaseVariableType
+        DataType: DynamicLinkMode
+        Value: 2
+  - Name: TransComplete
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Children:
+    - Name: DynamicLink
+      Type: DynamicLink
+      DataType: NodePath
+      Value: "../../../../CommDrivers/RAEtherNet_IPDriver1/EchoDemoStation/Tags/Controller Tags/SPLine1Summary/Trans_DN"
+      Children:
+      - Name: Mode
+        Type: BaseVariableType
+        DataType: DynamicLinkMode
+        Value: 2
+  - Name: SQLErrNum
+    Type: BaseDataVariableType
+    DataType: Int32
+  - Name: SQLErrDesc
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "No Error"
+  - Name: Result
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "No Result"
+  - Name: TriggerChanged
+    Type: VariableChangedEventDispatcher
+    Children:
+    - Name: VariableNodePath
+      Type: BaseVariableType
+      DataType: NodePath
+      Value: "../Trigger"
+    - Name: VariableValueChangedEventHandler1
+      Type: EventHandler
+      Children:
+      - Name: ListenEventType
+        Type: PropertyType
+        DataType: NodeId
+        Value: "/Types/EventTypes/BaseEventType/VariableConditionEvent/VariableValueChangedEvent"
+      - Name: MethodsToCall
+        Type: BaseObjectType
+        Children:
+        - Name: MethodContainer1
+          Type: BaseObjectType
+          Children:
+          - Name: ObjectPointer
+            Type: NodePointer
+            DataType: NodeId
+            Children:
+            - Name: Kind
+              Type: PropertyType
+              DataType: NodeId
+              Value: "/Types/ObjectTypes/BaseObjectType"
+            - Name: DynamicLink
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../../Call_ProdDataSP@NodeId"
+          - Name: Method
+            Type: BaseDataVariableType
+            DataType: String
+            Value: "CallInsertSummary"
+      - Name: EventArguments
+        Type: VariableValueChangedEvent
+        Children:
+        - Name: VariableNodeId
+          Type: BaseVariableType
+          DataType: NodeId
+        - Name: NewValue
+          Type: BaseVariableType
+          DataType: BaseDataType
+        - Name: OldValue
+          Type: BaseVariableType
+          DataType: BaseDataType
+        - Name: EventId
+          Type: PropertyType
+          DataType: ByteString
+        - Name: EventType
+          Type: PropertyType
+          DataType: NodeId
+        - Name: SourceNode
+          Type: PropertyType
+          DataType: NodeId
+        - Name: SourceName
+          Type: PropertyType
+          DataType: String
+        - Name: Time
+          Type: PropertyType
+          DataType: UtcTime
+        - Name: ReceiveTime
+          Type: PropertyType
+          DataType: UtcTime
+        - Name: Message
+          Type: PropertyType
+          DataType: LocalizedText
+        - Name: Severity
+          Type: PropertyType
+          DataType: UInt16
+  - Name: DB_Config
+    Type: Alias
+    DataType: NodeId
+    Value: "/Objects/SP_Demo/Model/DB_Configs/DemoDB"
+    Children:
+    - Name: Kind
+      Type: PropertyType
+      DataType: NodeId
+      Value: "/Objects/SP_Demo/Model/Types/DB_Config"

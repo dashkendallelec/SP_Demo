@@ -1,0 +1,75 @@
+Name: Controller Tags
+Type: FolderType
+Children:
+- Name: SPLine1Summary
+  Type: udt_SPInterface
+  DataType: udt_SPInterface
+  Children:
+  - Name: Trans_DN
+    Type: RAEtherNetIPTag
+    DataType: Boolean
+    Children:
+    - Name: SymbolName
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "SPLine1Summary.Trans_DN"
+  - Name: SQLErrorNum
+    Type: RAEtherNetIPTag
+    DataType: Int32
+    Children:
+    - Name: SymbolName
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "SPLine1Summary.SQLErrorNum"
+  - Name: Trigger
+    Type: RAEtherNetIPTag
+    DataType: Int32
+    Children:
+    - Name: SymbolName
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "SPLine1Summary.Trigger"
+- Name: Line1SummaryDB_LD
+  Type: udt_ProdData
+  DataType: udt_ProdData
+  Children:
+  - Name: PLC_TS
+    Type: RAEtherNetIPTag
+    DataType: String
+    Children:
+    - Name: SymbolName
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "Line1SummaryDB_LD.PLC_TS"
+  - Name: ProdLine
+    Type: RAEtherNetIPTag
+    DataType: String
+    Children:
+    - Name: SymbolName
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "Line1SummaryDB_LD.ProdLine"
+  - Name: EquipID
+    Type: RAEtherNetIPTag
+    DataType: String
+    Children:
+    - Name: SymbolName
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "Line1SummaryDB_LD.EquipID"
+  - Name: ProdCount
+    Type: RAEtherNetIPTag
+    DataType: Int32
+    Children:
+    - Name: SymbolName
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "Line1SummaryDB_LD.ProdCount"
+  - Name: CycleAvg
+    Type: RAEtherNetIPTag
+    DataType: Float
+    Children:
+    - Name: SymbolName
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "Line1SummaryDB_LD.CycleAvg"

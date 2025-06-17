@@ -1,0 +1,27 @@
+Name: DB_Configs
+Type: FolderType
+Children:
+- Name: DemoDB
+  Id: g=3030a4a1b04d22fd623e207c826e27bd
+  Type: DB_Config
+  Children:
+  - Name: Hostname
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "localhost"
+  - Name: Port
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 1433
+  - Name: DatabaseName
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "DemoDB"
+  - Name: Username
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "OptixUser"
+  - Name: Password
+    Type: BaseDataVariableType
+    DataType: Password
+    Value: "Kendall1!"

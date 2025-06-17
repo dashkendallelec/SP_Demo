@@ -1,0 +1,79 @@
+Name: VariableTypes
+Type: FolderType
+Children:
+- Name: udt_ProdData
+  Id: g=8834d4fd4b8176be89e21c52a3b05061
+  Supertype: TagStructure
+  DataType: udt_ProdData
+  ValueRank: Any
+  Children:
+  - Name: PLC_TS
+    Type: RAEtherNetIPTag
+    DataType: String
+    Children:
+    - Name: SymbolName
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "PLC_TS"
+  - Name: ProdLine
+    Type: RAEtherNetIPTag
+    DataType: String
+    Children:
+    - Name: SymbolName
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "ProdLine"
+  - Name: EquipID
+    Type: RAEtherNetIPTag
+    DataType: String
+    Children:
+    - Name: SymbolName
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "EquipID"
+  - Name: ProdCount
+    Type: RAEtherNetIPTag
+    DataType: Int32
+    Children:
+    - Name: SymbolName
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "ProdCount"
+  - Name: CycleAvg
+    Type: RAEtherNetIPTag
+    DataType: Float
+    Children:
+    - Name: SymbolName
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "CycleAvg"
+- Name: udt_SPInterface
+  Id: g=54a6be285c8d9881e4b4c08c3bc269e7
+  Supertype: TagStructure
+  DataType: udt_SPInterface
+  ValueRank: Any
+  Children:
+  - Name: Trans_DN
+    Type: RAEtherNetIPTag
+    DataType: Boolean
+    Children:
+    - Name: SymbolName
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "Trans_DN"
+  - Name: SQLErrorNum
+    Type: RAEtherNetIPTag
+    DataType: Int32
+    Children:
+    - Name: SymbolName
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "SQLErrorNum"
+  - Name: Trigger
+    Type: RAEtherNetIPTag
+    DataType: Int32
+    Children:
+    - Name: SymbolName
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "Trigger"

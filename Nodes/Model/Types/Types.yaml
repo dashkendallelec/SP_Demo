@@ -1,0 +1,180 @@
+Name: Types
+Type: FolderType
+Children:
+- Name: InsertProdData_Config
+  Id: g=31b082308adc1e8c2a40ecbfdc2b31bd
+  Supertype: BaseObjectType
+  Children:
+  - Name: SP
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "usp_ProdData"
+  - Name: Call_ProdDataSP
+    Type: NetLogic
+    Children:
+    - Class: Method
+      Name: CallInsertSummary
+      Id: g=c371bfb7dd85dd42cc33437e36a7262a
+  - Name: ns=4;LibraryReference
+    Type: ObjectLibraryReference
+    DataType: ObjectLibraryReferenceDataType
+    ModellingRule: None
+    Value: 
+     {
+      "TypeId": {
+       "Id": 72,
+       "Namespace": 4
+      },
+      "Body": {
+       "libraryGuid": "21146263924f8296246f2c44d76d6619",
+       "objectGuid": "299afcd22873a886ba40f7ad740e041d",
+       "objectVersion": 1,
+       "highestIgnoredVersion": 0
+      }
+     }
+  - Name: PLC_TS
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "Jan 1, 1601, 12:00:00 AM"
+  - Name: ProdLine
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "Line-x"
+  - Name: EquipID
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "Equip Name"
+  - Name: ProdCount
+    Type: BaseDataVariableType
+    DataType: Int32
+  - Name: CycleAvg
+    Type: BaseDataVariableType
+    DataType: Float
+    Value: 1.25
+  - Name: Trigger
+    Type: BaseDataVariableType
+    DataType: Int32
+  - Name: TransComplete
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: SQLErrNum
+    Type: BaseDataVariableType
+    DataType: Int32
+  - Name: SQLErrDesc
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "No Error"
+  - Name: Result
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "No Result"
+  - Name: TriggerChanged
+    Type: VariableChangedEventDispatcher
+    Children:
+    - Name: VariableNodePath
+      Type: BaseVariableType
+      DataType: NodePath
+      Value: "../Trigger"
+    - Name: VariableValueChangedEventHandler1
+      Type: EventHandler
+      Children:
+      - Name: ListenEventType
+        Type: PropertyType
+        DataType: NodeId
+        Value: "/Types/EventTypes/BaseEventType/VariableConditionEvent/VariableValueChangedEvent"
+      - Name: MethodsToCall
+        Type: BaseObjectType
+        Children:
+        - Name: MethodContainer1
+          Type: BaseObjectType
+          Children:
+          - Name: ns=2;ObjectPointer
+            Type: NodePointer
+            DataType: NodeId
+            Children:
+            - Name: Kind
+              Type: PropertyType
+              DataType: NodeId
+              Value: "/Types/ObjectTypes/BaseObjectType"
+            - Name: DynamicLink
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../../Call_ProdDataSP@NodeId"
+              Children:
+              - Name: Mode
+                Type: BaseVariableType
+                DataType: DynamicLinkMode
+                ModellingRule: Optional
+                Value: 2
+          - Name: ns=2;Method
+            Type: BaseDataVariableType
+            DataType: String
+            Value: "CallInsertSummary"
+      - Name: EventArguments
+        Type: VariableValueChangedEvent
+        Children:
+        - Name: VariableNodeId
+          Type: BaseVariableType
+          DataType: NodeId
+        - Name: NewValue
+          Type: BaseVariableType
+          DataType: BaseDataType
+        - Name: OldValue
+          Type: BaseVariableType
+          DataType: BaseDataType
+        - Name: EventId
+          Type: PropertyType
+          DataType: ByteString
+        - Name: EventType
+          Type: PropertyType
+          DataType: NodeId
+        - Name: SourceNode
+          Type: PropertyType
+          DataType: NodeId
+        - Name: SourceName
+          Type: PropertyType
+          DataType: String
+        - Name: Time
+          Type: PropertyType
+          DataType: UtcTime
+        - Name: ReceiveTime
+          Type: PropertyType
+          DataType: UtcTime
+        - Name: Message
+          Type: PropertyType
+          DataType: LocalizedText
+        - Name: Severity
+          Type: PropertyType
+          DataType: UInt16
+  - Name: DB_Config
+    Type: Alias
+    DataType: NodeId
+    Children:
+    - Name: Kind
+      Type: PropertyType
+      DataType: NodeId
+      Value: "/Objects/SP_Demo/Model/Types/DB_Config"
+- Name: DB_Config
+  Id: g=b16f983a2227461fd8c5b8b0b759a4ef
+  Supertype: BaseObjectType
+  Children:
+  - Name: Hostname
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "IRIS-007\\SQLEXPRESS"
+  - Name: Port
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 1433
+  - Name: DatabaseName
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "DatabaseName"
+  - Name: Username
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "OptixUser"
+  - Name: Password
+    Type: BaseDataVariableType
+    DataType: Password
+    Value: "Kendall1!"
